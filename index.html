@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <style type="text/css">
+      :root {
+        --dilation: 10;
+        --slow-animation-length: 0.375s;
+        --slow-animation: calc(var(--slow-animation-length) * var(--dilation));
+        --fast-animation-length: 0.125s;
+        --fast-animation: calc(var(--fast-animation-length) * var(--dilation));
+      }
+
+      body {
+        max-width: 800px;
+      }
+
+      .gallery {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: background-color var(--slow-animation);
+      }
+
+      .gallery.inactive {
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      .gallery-image-bounding-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition:
+          top var(--slow-animation),
+          left var(--slow-animation),
+          height var(--slow-animation),
+          width var(--slow-animation);
+      }
+
+      .gallery-image-bounding-box img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+    <script src="./gallery.js" type="text/javascript" /></script>
+    <script type="text/javascript" />
+      window.addEventListener("DOMContentLoaded", () => {
+        new Gallery(document.querySelectorAll("img.gallery-item"))
+      })
+    </script>
+  </head>
+  <body>
+    <p>
+      <img
+        style="float: right; max-width: 100px;"
+        class="gallery-item"
+        src="https://i.reddituploads.com/379cd0fc84604744906f8f6647dff6c5?fit=max&h=1536&w=1536&s=e35d8a49190aebd4e3eca312d580b0cdg"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum arcu
+      ipsum, eget semper nunc condimentum ut. In aliquet cursus imperdiet. Fusce
+      ut diam ante. Curabitur hendrerit velit sed dui convallis congue. Nam dui
+      nisi, facilisis et neque quis, suscipit ultricies metus. Curabitur congue
+      purus sed augue sollicitudin luctus vitae sit amet dolor. In a ultricies
+      ligula. Integer ultrices nulla at sapien imperdiet sodales. Ut in rutrum
+      mauris. Aliquam nec condimentum dolor, ac porta nisl. Praesent euismod nibh
+      pulvinar massa consequat malesuada. Suspendisse sit amet eros eu magna
+      consectetur mollis. Cras vel odio ac quam porttitor fermentum. Ut a
+      malesuada sem.
+    </p>
+
+    <p>
+      <img
+        style="float: left;"
+        class="gallery-item"
+        src="http://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/250px-004Charmander.png"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum arcu
+      ipsum, eget semper nunc condimentum ut. In aliquet cursus imperdiet. Fusce
+      ut diam ante. Curabitur hendrerit velit sed dui convallis congue. Nam dui
+      nisi, facilisis et neque quis, suscipit ultricies metus. Curabitur congue
+      purus sed augue sollicitudin luctus vitae sit amet dolor. In a ultricies
+      ligula. Integer ultrices nulla at sapien imperdiet sodales. Ut in rutrum
+      mauris. Aliquam nec condimentum dolor, ac porta nisl. Praesent euismod nibh
+      pulvinar massa consequat malesuada. Suspendisse sit amet eros eu magna
+      consectetur mollis. Cras vel odio ac quam porttitor fermentum. Ut a
+      malesuada sem.
+    </p>
+    <p>
+      Praesent efficitur erat tortor, nec convallis ligula iaculis at. Morbi
+      egestas fringilla arcu et fermentum. In congue porta ligula, ut eleifend
+      leo iaculis et. Maecenas vitae diam sit amet risus lacinia elementum.
+      Quisque ut aliquet neque. Vestibulum vehicula in nisl at vestibulum. Nulla
+      nec quam sollicitudin, rhoncus nisi vitae, vehicula lacus.
+      <img
+        style="float: right; max-width: 200px;"
+        class="gallery-item"
+        src="http://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/mil.png"
+      />
+    </p>
+    <p>
+      <img
+        style="float: left;"
+        class="gallery-item"
+        src="http://www.findthatlogo.com/wp-content/uploads/2011/10/green-bay-packers-logo-nfl.gif"
+      />
+      Integer mollis egestas nunc sit amet finibus. Aliquam est tellus,
+      fermentum nec posuere sed, tempor ut diam. Pellentesque elementum, erat
+      vitae dignissim auctor, felis justo ornare nibh, vel euismod leo metus a
+      ante. Nulla et libero id metus cursus vestibulum. Donec convallis orci a
+      luctus bibendum. Sed sollicitudin lacus non sapien faucibus, ac posuere
+      arcu varius. Nulla et dui non nibh porttitor varius sed ac nulla. Ut
+      placerat eros vel urna bibendum pretium.
+    </p>
+    <p>
+      Nunc ullamcorper vehicula neque, vel varius eros congue mattis. Cras eu ex
+      semper, suscipit lacus nec, dapibus mi. Morbi ultricies placerat diam.
+      Cras quis viverra est. Sed vel aliquam sem. Nam erat ligula, accumsan vel
+      finibus a, rutrum id mi. Nullam ornare, erat a accumsan congue, velit
+      neque eleifend mauris, quis fringilla nulla massa et purus. Nulla suscipit
+      fringilla nulla.
+    </p>
+    <p>
+      Aliquam nec condimentum eros. In fringilla sem ut turpis luctus, quis
+      tempor massa dignissim. Donec pretium pellentesque turpis, eget posuere
+      sapien viverra non. Quisque vitae urna nisi. Ut vel purus sed ex malesuada
+      scelerisque. Nullam in volutpat lacus. Suspendisse non hendrerit lacus.
+      Vestibulum tristique, leo nec vulputate ornare, felis tellus aliquam
+      lorem, sed pellentesque orci sem et est. Sed malesuada varius turpis ut
+      pretium. Donec consequat ultrices magna eget hendrerit. Nam gravida lectus
+      at consequat fringilla. Proin tristique convallis cursus. In sodales,
+      libero ac tempor euismod, felis lacus auctor nibh, non cursus libero risus
+      vitae nunc.
+    </p>
+  </body>
+</html>
